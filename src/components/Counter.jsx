@@ -18,7 +18,6 @@ export function Counter() {
   const divStyle = {
     display: "flex",
     gap: ".5rem",
-    backgroundColor: "#fff",
   };
 
   const disabledButtonStyle = {
@@ -26,7 +25,7 @@ export function Counter() {
   };
   return (
     <>
-      <p>Compteur : {count}</p>
+      <p style={{margin: ".8rem 0"}}>Compteur : {count}</p>
       <div style={divStyle}>
         <button
           style={count < 1 ? disabledButtonStyle : undefined}
@@ -35,10 +34,10 @@ export function Counter() {
         >
           Decrementer
         </button>
-        <button onClick={reinitialiser} disabled={count === 0}>
+        <button style={count < 1 ? disabledButtonStyle : undefined} onClick={reinitialiser} disabled={count === 0}>
           Remettre à 0
         </button>
-        <button onClick={incrementer}>Incrementer</button>
+        <button  onClick={incrementer}>Incrementer</button>
       </div>
     </>
   );
